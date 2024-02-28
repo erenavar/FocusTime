@@ -1,10 +1,11 @@
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
+import { TextInput } from "react-native-paper";
 import { colors } from "../utils/colors";
 
 export const Focus = () => (
   <View style={styles.container}>
-    <Text style={styles.text}>Focus Feature</Text>
+    <TextInput label="Focus Item" />
   </View>
 );
 
