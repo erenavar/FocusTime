@@ -20,7 +20,7 @@ export default function App() {
       ) : (
         <View>
           <Text style={{ color: colors.white }}>
-            I am going to render the timer for {currentSubject}
+            I am going to render the timer for {currentSubject }
           </Text>
         </View>
       )}
