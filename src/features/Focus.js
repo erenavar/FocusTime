@@ -34,7 +34,7 @@ const styles = StyleSheet.create({
   button: { justifyContent: "center" },
   textInput: {
     flex: 1,
-    marginRight: spacing.sm,
+    marginRight: spacing.lg,
   },
   inputContainer: {
     padding: spacing.lg,
