@@ -1,16 +1,12 @@
 import React from "react";
-import { Text, StyleSheet } from "react-native";
-import { Countdown } from "../components/Countdown";
+import { Text, View, StyleSheet } from "react-native";
 
 export const Timer = ({ focusSubject }) => {
-  <View style={styles.container}>
-    <View style={styles.countdown}></View>
-  </View>;
+  return (
+    <View style={styles.container}>
+      <Text>Focus Subject {focusSubject}</Text>
+    </View>
+  );
 };
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-  countdown: {},
-});
+const styles = StyleSheet.create({});
