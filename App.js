@@ -7,6 +7,7 @@ import {
   Platform,
   StatusBar,
 } from "react-native";
+import { PaperProvider } from "react-native-paper";
 import { colors } from "./src/utils/colors";
 import { Focus } from "./src/features/Focus";
 import { Timer } from "./src/features/Timer";
@@ -14,17 +15,19 @@ import { Timer } from "./src/features/Timer";
 export default function App() {
   const [currentSubject, setCurrentSubject] = useState("test ");
   return (
-    <SafeAreaView style={styles.container}>
-      {!currentSubject ? (
-        <Focus addSubject={setCurrentSubject} />
-      ) : (
-        <Timer
-          focusSubject={currentSubject}
-          onTimerEnd={() => {}}
-          clearSubject={() => {}}
-        />
-      )}
-    </SafeAreaView>
+    <PaperProvider>
+      <SafeAreaView style={styles.container}>
+        {!currentSubject ? (
+          <Focus addSubject={setCurrentSubject} />
+        ) : (
+          <Timer
+            focusSubject={currentSubject}
+            onTimerEnd={() => {}}
+            clearSubject={() => {}}
+          />
+        )}
+      </SafeAreaView>
+    </PaperProvider>
   );
 }
 
