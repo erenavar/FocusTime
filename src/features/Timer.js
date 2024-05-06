@@ -8,10 +8,15 @@ export const Timer = ({ focusSubject }) => {
   return (
     <View style={styles.container}>
       <View style={styles.countdown}>
-        <Countdown isPaused onProgress={() => {}} onEnd={() => {}} />
+        <Countdown isPaused={!isStart} onProgress={() => {}} onEnd={() => {}} />
       </View>
       <View style={styles.buttonWrapper}>
-        <RoundedButton title="start" />
+        {!isStart && (
+          <RoundedButton title="start" onPress={() => setIsStart(true)} />
+        )}
+        {isStart && (
+          <RoundedButton title="pause" onPress={() => setIsStart(false)} />
+        )}
       </View>
     </View>
   );
