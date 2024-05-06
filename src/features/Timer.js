@@ -5,6 +5,7 @@ import { Countdown } from "../components/Countdown";
 import { RoundedButton } from "../components/RoundedButton";
 import { spacing } from "../utils/sizes";
 import { colors } from "../utils/colors";
+import Timing from "./Timing";
 
 const ONE_SECOND_IN_MS = 1000;
 
@@ -47,6 +48,9 @@ export const Timer = ({ focusSubject }) => {
           <RoundedButton title="pause" onPress={() => setIsStart(false)} />
         )}
       </View>
+      <View style={styles.timingWrapper}>
+        <Timing onChangeTime={setMinutes} />
+      </View>
     </View>
   );
 };
@@ -60,10 +64,15 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
+  timingWrapper: {
+    flex: 0.1,
+    flexDirection: "row",
+    padding: spacing.md,
+  },
   buttonWrapper: {
     flex: 0.3,
     flexDirection: "row",
-    padding: 15,
+    padding: spacing.md,
     justifyContent: "center",
     alignItems: "center",
   },
