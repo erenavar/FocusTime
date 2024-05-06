@@ -12,7 +12,11 @@ export const Timer = ({ focusSubject }) => {
   return (
     <View style={styles.container}>
       <View style={styles.countdown}>
-        <Countdown isPaused={!isStart} onProgress={() => {}} onEnd={() => {}} />
+        <Countdown
+          isPaused={!isStart}
+          onProgress={(progress) => setProgress(progress)}
+          onEnd={() => {}}
+        />
         <View style={{ paddingTop: spacing.xxl }}>
           <Text style={styles.title}>Focusing on:</Text>
           <Text style={styles.task}>{focusSubject}</Text>
