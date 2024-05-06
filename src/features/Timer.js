@@ -15,7 +15,7 @@ const PATTERN = [
   1 * ONE_SECOND_IN_MS,
 ];
 
-export const Timer = ({ focusSubject }) => {
+export const Timer = ({ focusSubject, clearSubject }) => {
   const [isStart, setIsStart] = useState(false);
   const [progress, setProgress] = useState(1);
   const [minutes, setMinutes] = useState(0.1);
@@ -51,6 +51,9 @@ export const Timer = ({ focusSubject }) => {
       <View style={styles.timingWrapper}>
         <Timing onChangeTime={setMinutes} />
       </View>
+      <View style={styles.clearSubjectWrapper}>
+        <RoundedButton size={55} title="-" onPress={clearSubject} />
+      </View>
     </View>
   );
 };
@@ -75,6 +78,11 @@ const styles = StyleSheet.create({
     padding: spacing.md,
     justifyContent: "center",
     alignItems: "center",
+  },
+  clearSubjectWrapper: {
+    flexDirection: "row",
+    marginTop: spacing.xxxl,
+    justifyContent: "center",
   },
   title: {
     color: colors.white,
