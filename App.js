@@ -15,7 +15,7 @@ import { FocusHistory } from "./src/features/FocusHistory";
 
 export default function App() {
   const [currentSubject, setCurrentSubject] = useState();
-  const [history, setHistory] = useState([]);
+  const [history, setHistory] = useState(["test"]);
   return (
     <PaperProvider>
       <SafeAreaView style={styles.container}>
