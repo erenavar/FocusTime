@@ -11,7 +11,7 @@ export const Countdown = ({ minutes = 0.1, isPaused, onProgress, onEnd }) => {
 
   const [millis, setMillis] = useState(null);
 
-  const reset = () => {
+  const reset = (   ) => {
     setMillis(minutesToMillis(minutes));
   };
 
